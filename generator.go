@@ -83,7 +83,7 @@ func (s *SequenceGenerator) NextID() int64 {
 
 func (s *SequenceGenerator) waitNextMillisecond(currentTimestamp int64) int64 {
 	for s.lastTimeStamp == currentTimestamp {
-		return timestamp()
+		currentTimestamp = timestamp()
 	}
 
 	return currentTimestamp
